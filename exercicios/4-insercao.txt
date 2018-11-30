@@ -1,18 +1,28 @@
-1.	Insira 5 novos registros conforme descrições abaixo:
+1.	Insira 5 novos registros conforme descriï¿½ï¿½es abaixo:
 Titulo = Titulo U
-Descrição = Java
-Concluída = verdadeiro
+Descriï¿½ï¿½o = Java
+Concluï¿½da = verdadeiro
 
-Titulo = Titulo O
-Descrição = CSharp
-Concluída = falso
+    db.todo.insert({ "titulo" : "Titulo U", "descricao" : "java", concluida: true }) 
 
-Titulo = Titulo P
-Descrição = Firebase
+2. Titulo = Titulo O
+Descriï¿½ï¿½o = CSharp
+Concluï¿½da = falso
 
-Titulo = Titulo Y
-Descrição = Microsoft
+        db.todo.insert({ "titulo" : "Titulo O", "descricao" : "CSharp", concluida: false }) 
 
-Titulo = Titulo R
-Descrição = Oracle
-Data de Inclusão = data de hoje
+3. Titulo = Titulo P
+Descriï¿½ï¿½o = Firebase
+
+        db.todo.insert({ "titulo" : "Titulo P", "descricao" : "Firebase"}) 
+
+4. Titulo = Titulo Y
+Descriï¿½ï¿½o = Microsoft
+        db.todo.insert({ "titulo" : "Titulo Y", "descricao" : "Microsoft"}) 
+
+
+5. Titulo = Titulo R
+Descriï¿½ï¿½o = Oracle
+Data de Inclusï¿½o = data de hoje
+        db.todo.insert({ "titulo" : "Titulo R", "descricao" : "Oracle", data: new Date() }) 
+

@@ -1,20 +1,36 @@
+SOLUÃ‡ÃƒO DOS EXERCÃCIOS - AULA 27.11.2018
+
 1.	Selecione todos os registros.
+    db.todo.find()
 
-2.	Selecione todos os registros e deixe a com apresentação melhor.
+2.	Selecione todos os registros e deixe a com apresentaï¿½ï¿½o melhor.
+    db.todo.find().pretty()
 
-3.	Selecione todos os registros em que o título seja igual a ‘Titulo A’.
+3.	Selecione todos os registros em que o tï¿½tulo seja igual a ï¿½Titulo Aï¿½.
+    db.todo.find({â€œtituloâ€ : â€œTitulo Aâ€}).pretty()
 
-4.	Selecione todos os registros em que o título seja igual a ‘Titulo C’.
+4.	Selecione todos os registros em que o tï¿½tulo seja igual a ï¿½Titulo Cï¿½.
+    db.todo.find({â€œtituloâ€ : â€œTitulo Câ€}).pretty() 
 
-5.	Selecione todos os registros em que a descrição seja “mongodb”.
+5.	Selecione todos os registros em que a descriï¿½ï¿½o seja ï¿½mongodbï¿½.
+    db.todo.find({â€œdescricaoâ€ : â€œmongodbâ€}).pretty()
 
-6.	Selecione todos os registros onde o título seja igual a 'Titulo B' e a descrição 'nodejs'. Após, o Titulo seja 'Título K' e a descrição seja 'html'.
+6.	a)Selecione todos os registros onde o tï¿½tulo seja igual a 'Titulo B' e a descriï¿½ï¿½o 'nodejs'.
+    db.todo.find( { â€œtituloâ€ : â€œTitulo Bâ€ , â€œdescricaoâ€ : â€œnodejsâ€ } ).pretty()
 
-7.	Selecione todos os registros em que o título seja igual a 'Titulo B' OU 'Titulo C'.
+    b) Apï¿½s, o Titulo seja 'Tï¿½tulo K' e a descriï¿½ï¿½o seja 'html'.
+    db.todo.find( { â€œtituloâ€ : â€œTitulo Kâ€ , â€œdescricaoâ€ : â€œhtmlâ€ } ).pretty()
 
-8.	Pegue o exercício acima e inclua também aonde a descrição seja igual 'javascript'.
 
-9.	Trabalhe com um operador diferente de 'OU' para trazer todos os registros aonde as descrições sejam iguais a 'mongodb', 'css' ou 'jquery'.
+7.	Selecione todos os registros em que o tï¿½tulo seja igual a 'Titulo B' OU 'Titulo C'.
+    db.todo.find({ $or: [{â€œtituloâ€ : â€œTitulo Bâ€} , { â€œtituloâ€ : â€œTitulo Câ€ }] }).pretty()
+
+8.	Pegue o exercï¿½cio acima e inclua tambï¿½m aonde a descriï¿½ï¿½o seja igual 'javascript'.
+    db.todo.find({ $or: [{â€œtituloâ€ : â€œTitulo Bâ€} , { â€œtituloâ€ : â€œTitulo Dâ€ } , { "descricao" : "javascript" }] }).pretty()
+
+9.	Trabalhe com um operador diferente de 'OU' para trazer todos os registros aonde as descriï¿½ï¿½es sejam iguais a 'mongodb', 'css' ou 'jquery'.
+    db.todo.find({ "descricao" : { $in : ["mongodb", "css", "jquery"] } }).pretty()
 
 Utilizando os dois operadores juntos. $or e $in.
-10.	Procure todas as tarefas cujo título seja igual a A ou a descrição seja igual a es6 ou bootstrap.
+10.	Procure todas as tarefas cujo tï¿½tulo seja igual a A ou a descriï¿½ï¿½o seja igual a es6 ou bootstrap.
+    db.todo.find({$or:[{"titulo": "Titulo A"}, {"descricao": {$in:["es6", "bootstrap"]}}]}).pretty()
